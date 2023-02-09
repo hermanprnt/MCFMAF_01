@@ -1,3 +1,67 @@
-﻿<h3>Welcome @ViewBag.username !! this is bpkb 2</h3>
+﻿@model MCFMAF_01.Database.TRDB2.TrBpkb
+
+
+<h3>Create Data TR 2</h3>
+<hr />
+
+<form asp-action="CreateTR2" asp-controller="Login" method="post">
+    <div class="mb-3">
+        <label class="form-label">Agreement Number</label>
+        <input type="text" class="form-control" asp-for="AgreementNumber" placeholder="Input Agreement Number" />
+        <span asp-validation-for="AgreementNumber" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">BRANCH ID</label>
+        <input type="text" class="form-control" asp-for="BranchId" placeholder="Input Branch ID" />
+        <span asp-validation-for="BranchId" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">No. BPKB</label>
+        <input type="text" class="form-control" asp-for="BpkbNo" placeholder="Input No.BPKB" />
+        <span asp-validation-for="BpkbNo" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Tanggal BPKB In</label>
+        <input type="date" class="form-control" asp-for="BpkbDateIn" />
+        <span asp-validation-for="BpkbDateIn" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Tanggal BPKB</label>
+        <input type="date" class="form-control" asp-for="BpkbDate" />
+        <span asp-validation-for="BpkbDate" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">No Faktur</label>
+        <input type="text" class="form-control" asp-for="FakturNo" placeholder="Input No. Faktur" />
+        <span asp-validation-for="FakturNo" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Tanggal Faktur</label>
+        <input type="date" class="form-control" asp-for="FakturDate" />
+        <span asp-validation-for="FakturDate" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Nomor Polisi</label>
+        <input type="text" class="form-control" asp-for="PoliceNo" placeholder="Input Nomor Polisi" />
+        <span asp-validation-for="PoliceNo" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Lokasi Penyimpanan</label>
+        <select class="form-control"
+                asp-items="@(new SelectList(ViewBag.Locations, "Value","Text"))" asp-for="LocationId">
+        </select>
+
+        <span asp-validation-for="LocationId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </div>
+
+</form>
+
+
+
+
 
 <a asp-controller="login" asp-action="logout">Logout</a>

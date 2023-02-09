@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MCFMAF_01.Database.TRDB1;
 
@@ -17,11 +18,12 @@ public partial class TrBpkb
 
     public DateTime? FakturDate { get; set; }
 
+    [ForeignKey("LocationId")]
     public string? LocationId { get; set; }
 
     public string PoliceNo { get; set; } = null!;
 
     public DateTime BpkbDateIn { get; set; }
 
-    public virtual MsStorageLocation? Location { get; set; }
+    public virtual MsStorageLocation? Location { get; set; }  
 }

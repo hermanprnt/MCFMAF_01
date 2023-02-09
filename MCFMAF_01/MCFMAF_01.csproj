@@ -8,7 +8,7 @@
 
   <ItemGroup>
     <Folder Include="Database\TRDB2\" />
-    <Folder Include="Models\Database\" />
+    <Folder Include="ViewModel\" />
   </ItemGroup>
 
   <ItemGroup>

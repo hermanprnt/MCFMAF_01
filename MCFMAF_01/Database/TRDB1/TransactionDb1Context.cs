@@ -20,8 +20,14 @@ public partial class TransactionDb1Context : DbContext
     public virtual DbSet<TrBpkb> TrBpkbs { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=LAPTOP-V2N5OE11\\SQLSERVER2016;Initial Catalog=TRANSACTION_DB1; User ID=sa;Password=mekanik12;Encrypt=false");
+    {
+        if (!optionsBuilder.IsConfigured)
+        {
+
+        }
+    }
+    //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+    //=> optionsBuilder.UseSqlServer("Server=LAPTOP-V2N5OE11\\SQLSERVER2016;Initial Catalog=TRANSACTION_DB1; User ID=sa;Password=mekanik12;Encrypt=false");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
